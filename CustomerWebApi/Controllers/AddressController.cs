@@ -32,7 +32,7 @@ namespace CustomerWebApi.Controllers
             }
         }
 
-        [HttpGet]
+        [HttpGet("{id}")]
         public IActionResult Get(Guid id)
         {
             try

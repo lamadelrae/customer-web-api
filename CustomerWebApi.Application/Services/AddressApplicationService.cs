@@ -26,7 +26,6 @@ namespace CustomerWebApi.Application.Services
         public AddressDto Add(AddressDto obj)
         {
             Address address = _addressAdapter.DtoToEntity(obj);
-            address.SetCustomer(_customerService.Get(obj.Customer.Id));
             return _addressAdapter.EntityToDto(_addressService.Insert(address));
         }
 

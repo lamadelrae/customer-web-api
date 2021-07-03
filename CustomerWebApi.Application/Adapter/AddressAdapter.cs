@@ -22,20 +22,12 @@ namespace CustomerWebApi.Application.Adapter
 
         public Address DtoToEntity(AddressDto dto)
         {
-            return new Address(dto.Street,
-                               dto.District,
-                               dto.City,
-                               dto.State,
-                               new Customer(dto.Customer.Id.GetGuid(), dto.Customer.Name, dto.Customer.Cpf, dto.Customer.BirthDate) { Id = dto.Customer.Id.GetGuid() });
+            return new Address(dto.CustomerId, dto.Street, dto.District, dto.City, dto.State);
         }
 
         public AddressDto EntityToDto(Address entity)
         {
-            return new AddressDto(entity.Street,
-                                  entity.District,
-                                  entity.City,
-                                  entity.State,
-                                  new CustomerDto(entity.Customer.Name, entity.Customer.Cpf, entity.Customer.BirthDate) { Id = entity.Customer.Id.GetGuid() });
+            return new AddressDto(entity.Street, entity.District, entity.City, entity.State, entity.CustomerId) { Id = entity.Id.GetGuid() };
         }
     }
 }

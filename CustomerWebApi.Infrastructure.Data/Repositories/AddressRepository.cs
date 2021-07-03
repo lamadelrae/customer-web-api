@@ -9,12 +9,6 @@ namespace CustomerWebApi.Infrastructure.Data.Repositories
 {
     public class AddressRepository : BaseRepository<Address>, IAddressRepository
     {
-        public override void Insert(Address obj)
-        {
-            _context.Address.Add(obj);
-            _context.SaveChanges();
-        }
-
         public override List<Address> Get()
         {
             return _context.Address.Include(i => i.Customer).ToList();

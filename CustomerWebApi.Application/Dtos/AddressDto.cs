@@ -8,7 +8,7 @@ namespace CustomerWebApi.Application.Dtos
 {
     public class AddressDto : Dto
     {
-        public CustomerDto Customer { get; private set; }
+        public Guid CustomerId { get; private set; }
 
         public string Street { get; private set; }
 
@@ -22,13 +22,13 @@ namespace CustomerWebApi.Application.Dtos
                           string district,
                           string city,
                           string state,
-                          CustomerDto customer)
+                          Guid customerId)
         {
             Street = street;
             District = district;
             City = city;
             State = state;
-            Customer = customer;
+            CustomerId = customerId;
         }
     }
 }

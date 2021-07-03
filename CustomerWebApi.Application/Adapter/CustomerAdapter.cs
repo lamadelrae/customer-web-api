@@ -23,7 +23,7 @@ namespace CustomerWebApi.Application.Adapter
         {
             Customer customer = new Customer(dto.Name, dto.Cpf, dto.BirthDate);
             foreach (AddressDto addressDto in dto.Addresses)
-                customer.Addresses.Add(new Address(addressDto.Street, addressDto.District, addressDto.City, addressDto.State, customer));
+                customer.Addresses.Add(new Address(customer.Id, addressDto.Street, addressDto.District, addressDto.City, addressDto.State));
 
             return customer;
         }
@@ -32,7 +32,7 @@ namespace CustomerWebApi.Application.Adapter
         {
             CustomerDto customer = new CustomerDto(entity.Name, entity.Cpf, entity.BirthDate);
             foreach (Address address in entity.Addresses)
-                customer.Addresses.Add(new AddressDto(address.Street, address.District, address.City, address.State, customer));
+                customer.Addresses.Add(new AddressDto(address.Street, address.District, address.City, address.State, customer.Id));
 
             return customer;
         }

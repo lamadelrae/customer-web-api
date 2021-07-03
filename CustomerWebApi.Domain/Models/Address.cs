@@ -11,6 +11,9 @@ namespace CustomerWebApi.Domain.Models
     public class Address : Entity
     {
         [Required]
+        public Guid CustomerId { get; set; }
+
+        [Required]
         public Customer Customer { get; private set; }
 
         [Required]
@@ -31,19 +34,19 @@ namespace CustomerWebApi.Domain.Models
 
         private Address() { }
 
-        public Address(string street,
+        public Address(Guid customerId,
+                       string street,
                        string district,
                        string city,
-                       string state,
-                       Customer customer)
+                       string state)
         {
+
+            CustomerId = customerId;
             Street = street;
             District = district;
             City = city;
             State = state;
-            Customer = customer;
         }
-
 
         public void SetCustomer(Customer customer)
         {
