@@ -33,15 +33,15 @@ namespace CustomerWebApi
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "CustomerWebApi", Version = "v1" });
             });
 
-            services.AddSingleton<ICustomerApplicationService, CustomerApplicationService>();
-            services.AddSingleton<IAddressApplicationService, AddressApplicationService>();
-            services.AddSingleton<IAddressService, AddressService>();
-            services.AddSingleton<ICustomerService, CustomerService>();
-            services.AddSingleton<IAddressAdapter, AddressAdapter>();
-            services.AddSingleton<ICustomerAdapter, CustomerAdapter>();
-            services.AddSingleton<ICustomerAdapter, CustomerAdapter>();
-            services.AddSingleton<ICustomerRepository, CustomerRepository>();
-            services.AddSingleton<IAddressRepository, AddressRepository>();
+            services.AddScoped<ICustomerApplicationService, CustomerApplicationService>();
+            services.AddScoped<IAddressApplicationService, AddressApplicationService>();
+            services.AddScoped<IAddressService, AddressService>();
+            services.AddScoped<ICustomerService, CustomerService>();
+            services.AddScoped<IAddressAdapter, AddressAdapter>();
+            services.AddScoped<ICustomerAdapter, CustomerAdapter>();
+            services.AddScoped<ICustomerAdapter, CustomerAdapter>();
+            services.AddScoped<ICustomerRepository, CustomerRepository>();
+            services.AddScoped<IAddressRepository, AddressRepository>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

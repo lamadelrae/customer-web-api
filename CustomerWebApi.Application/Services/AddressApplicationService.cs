@@ -47,6 +47,7 @@ namespace CustomerWebApi.Application.Services
         public AddressDto Update(AddressDto obj)
         {
             Address address = _addressAdapter.DtoToEntity(obj);
+            address.SetCustomer(_customerService.Get(obj.CustomerId));
             return _addressAdapter.EntityToDto(_addressService.Update(address));
         }
     }

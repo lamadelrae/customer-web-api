@@ -1,6 +1,7 @@
 ﻿using CustomerWebApi.Application.Dtos;
 using CustomerWebApi.Application.Interfaces;
 using CustomerWebApi.Domain.Models;
+using CustomerWebApi.Infrastructure.CrossCutting;
 using System.Collections.Generic;
 
 namespace CustomerWebApi.Application.Adapter
@@ -21,18 +22,18 @@ namespace CustomerWebApi.Application.Adapter
 
         public Customer DtoToEntity(CustomerDto dto)
         {
-            Customer customer = new Customer(dto.Name, dto.Cpf, dto.BirthDate);
+            Customer customer = new Customer(dto.Name, dto.Cpf, dto.BirthDate) { Id = dto.Id.GetGuid() };
             foreach (AddressDto addressDto in dto.Addresses)
-                customer.Addresses.Add(new Address(customer.Id, addressDto.Street, addressDto.District, addressDto.City, addressDto.State));
+                customer.Addresses.Add(new Address(customer.Id, addressDto.Street, addressDto.District, addressDto.City, addressDto.State) { Id = addressDto.Id.GetGuid() });
 
             return customer;
         }
 
         public CustomerDto EntityToDto(Customer entity)
         {
-            CustomerDto customer = new CustomerDto(entity.Name, entity.Cpf, entity.BirthDate);
+            CustomerDto customer = new CustomerDto(entity.Name, entity.Cpf, entity.BirthDate) { Id = entity.Id.GetGuid() };
             foreach (Address address in entity.Addresses)
-                customer.Addresses.Add(new AddressDto(address.Street, address.District, address.City, address.State, customer.Id));
+                customer.Addresses.Add(new AddressDto(address.Street, address.District, address.City, address.State, customer.Id) { Id = address.Id.GetGuid() });
 
             return customer;
         }

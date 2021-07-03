@@ -22,7 +22,7 @@ namespace CustomerWebApi.Application.Adapter
 
         public Address DtoToEntity(AddressDto dto)
         {
-            return new Address(dto.CustomerId, dto.Street, dto.District, dto.City, dto.State);
+            return new Address(dto.CustomerId, dto.Street, dto.District, dto.City, dto.State) { Id = dto.Id.GetGuid() };
         }
 
         public AddressDto EntityToDto(Address entity)

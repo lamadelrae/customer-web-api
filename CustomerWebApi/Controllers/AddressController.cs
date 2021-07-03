@@ -67,11 +67,11 @@ namespace CustomerWebApi.Controllers
             }
             catch (Exception ex)
             {
-                return BadRequest(ex.Message);
+               return BadRequest(ex.Message);
             }
         }
 
-        [HttpDelete]
+        [HttpDelete("{id}")]
         public IActionResult Delete(Guid id)
         {
             try
