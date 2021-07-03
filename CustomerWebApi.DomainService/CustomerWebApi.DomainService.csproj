@@ -1,0 +1,12 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net5.0</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\CustomerWebApi.Domain\CustomerWebApi.Domain.csproj" />
+    <ProjectReference Include="..\CustomerWebApi.Infrastructure.Data\CustomerWebApi.Infrastructure.Data.csproj" />
+  </ItemGroup>
+
+</Project>
