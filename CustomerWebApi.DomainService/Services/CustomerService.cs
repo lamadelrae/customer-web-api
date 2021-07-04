@@ -12,5 +12,19 @@ namespace CustomerWebApi.DomainService.Services
     public class CustomerService : BaseService<Customer>, ICustomerService
     {
         public CustomerService(ICustomerRepository repository) : base(repository) { }
+
+        public override Customer Insert(Customer obj)
+        {
+            obj.IsCustomerValid();
+            _baseRepository.Insert(obj);
+            return obj;
+        }
+
+        public override Customer Update(Customer obj)
+        {
+            obj.IsCustomerValid();
+            _baseRepository.Update(obj);
+            return obj;
+        }
     }
 }

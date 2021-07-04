@@ -18,28 +18,28 @@ namespace CustomerWebApi.DomainService.Services
             _baseRepository = baseRepository;
         }
 
-        public void Delete(T obj)
+        public virtual void Delete(T obj)
         {
             _baseRepository.Delete(obj);
         }
 
-        public IEnumerable<T> Get()
+        public virtual IEnumerable<T> Get()
         {
             return _baseRepository.Get();
         }
 
-        public T Get(Guid id)
+        public virtual T Get(Guid id)
         {
             return _baseRepository.Get(id);
         }
 
-        public T Insert(T obj)
+        public virtual T Insert(T obj)
         {
             _baseRepository.Insert(obj);
             return obj;
         }
 
-        public T Update(T obj)
+        public virtual T Update(T obj)
         {
             _baseRepository.Update(obj);
             return obj;
