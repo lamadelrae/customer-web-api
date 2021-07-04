@@ -48,6 +48,22 @@ namespace CustomerWebApi.Domain.Models
             State = state;
         }
 
+        public Address(Guid id,
+                       Guid customerId,
+                       string street,
+                       string district,
+                       string city,
+                       string state)
+        {
+
+            Id = id;
+            CustomerId = customerId;
+            Street = street;
+            District = district;
+            City = city;
+            State = state;
+        }
+
         public void SetCustomer(Customer customer)
         {
             Customer = customer;
