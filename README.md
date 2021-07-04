@@ -1,6 +1,6 @@
-Servidor: Localhost/SQL2019
-Senha: pass123
-Connection String: 02 - Infra/Data/CustomerWebApi.Infrastructure.Data/Database/Context.cs
+Servidor: Localhost/SQL2019 <br>
+Senha: pass123 <br>
+Connection String: 02 - Infra/Data/CustomerWebApi.Infrastructure.Data/Database/Context.cs<br>
 SQL Para criação do Banco de dados:
 
 ```
