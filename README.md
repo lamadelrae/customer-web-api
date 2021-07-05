@@ -1,3 +1,9 @@
+<p>
+	Projeto em .NET 5 WebApi, utilizando swagger para documentação. <br>
+	Padrões utilizados: Repository, Adapter, DDD e SOLID.
+</p>
+
+
 Servidor: Localhost/SQL2019 <br>
 Senha: pass123 <br>
 Connection String: 02 - Infra/Data/CustomerWebApi.Infrastructure.Data/Database/Context.cs<br>
