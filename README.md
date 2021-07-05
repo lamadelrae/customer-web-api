@@ -1,9 +1,10 @@
 <p>
-	Projeto em .NET 5 WebApi, utilizando swagger para documentação. <br>
+	Projeto em .NET 5 WebApi, utilizando swagger para documentação e NUNIT para testes.<br>
 	Padrões utilizados: Repository, Adapter, DDD e SOLID.
 </p>
 
 
+<h2>Banco de dados:</h2>
 Servidor: Localhost/SQL2019 <br>
 Senha: pass123 <br>
 Connection String: 02 - Infra/Data/CustomerWebApi.Infrastructure.Data/Database/Context.cs<br>
