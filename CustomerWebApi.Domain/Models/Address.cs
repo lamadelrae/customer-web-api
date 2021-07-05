@@ -13,7 +13,6 @@ namespace CustomerWebApi.Domain.Models
         [Required]
         public Guid CustomerId { get; private set; }
 
-        [Required]
         public Customer Customer { get; private set; }
 
         [Required]
