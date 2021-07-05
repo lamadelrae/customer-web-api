@@ -24,16 +24,23 @@ namespace CustomerWebApi.Application.Adapter
         {
             Customer customer = new Customer(dto.Name, dto.Cpf, dto.BirthDate) { Id = dto.Id.GetGuid() };
             foreach (AddressDto addressDto in dto.Addresses)
-                customer.Addresses.Add(new Address(customer.Id, addressDto.Street, addressDto.District, addressDto.City, addressDto.State) { Id = addressDto.Id.GetGuid() });
+                customer.Addresses.Add(new AddressAdapter().DtoToEntity(addressDto));
 
             return customer;
         }
 
         public CustomerDto EntityToDto(Customer entity)
         {
-            CustomerDto customer = new CustomerDto(entity.Name, entity.Cpf, entity.BirthDate) { Id = entity.Id.GetGuid() };
+            CustomerDto customer = new CustomerDto
+            {
+                Id = entity.Id.GetGuid(),
+                Name = entity.Name,
+                Cpf = entity.Cpf,
+                BirthDate = entity.BirthDate
+            };
+
             foreach (Address address in entity.Addresses)
-                customer.Addresses.Add(new AddressDto(address.Street, address.District, address.City, address.State, customer.Id) { Id = address.Id.GetGuid() });
+                customer.Addresses.Add(new AddressAdapter().EntityToDto(address));
 
             return customer;
         }

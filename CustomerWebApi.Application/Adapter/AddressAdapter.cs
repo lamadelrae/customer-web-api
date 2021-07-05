@@ -27,7 +27,15 @@ namespace CustomerWebApi.Application.Adapter
 
         public AddressDto EntityToDto(Address entity)
         {
-            return new AddressDto(entity.Street, entity.District, entity.City, entity.State, entity.CustomerId) { Id = entity.Id.GetGuid() };
+            return new AddressDto
+            {
+                Id = entity.Id.GetGuid(),
+                CustomerId = entity.CustomerId,
+                State = entity.State,
+                Street = entity.Street,
+                City = entity.City,
+                District = entity.District
+            };
         }
     }
 }

@@ -8,21 +8,12 @@ namespace CustomerWebApi.Application.Dtos
 {
     public class CustomerDto : Dto
     {
-        public string Name { get; private set; }
+        public string Name { get; set; }
 
-        public string Cpf { get; private set; }
+        public string Cpf { get; set; }
 
-        public DateTime BirthDate { get; private set; }
+        public DateTime BirthDate { get; set; }
 
-        public List<AddressDto> Addresses { get; private set; } = new List<AddressDto>();
-
-        public CustomerDto(string name,
-                           string cpf, 
-                           DateTime birthDate)
-        {
-            Name = name;
-            Cpf = cpf;
-            BirthDate = birthDate;
-        }
+        public List<AddressDto> Addresses { get; set; } = new List<AddressDto>();
     }
 }
