@@ -18,7 +18,6 @@ namespace CustomerWebApi.Tests
             try
             {
                 Address address = new Address(Guid.Empty, "A", "A", "A", "A");
-                address.IsAddressValid();
                 Assert.Fail();
             }
             catch (Exception)
@@ -33,7 +32,6 @@ namespace CustomerWebApi.Tests
             try
             {
                 Address address = new Address(Guid.NewGuid(), string.Empty, "A", "A", "A");
-                address.IsAddressValid();
                 Assert.Fail();
             }
             catch (Exception)
@@ -48,7 +46,6 @@ namespace CustomerWebApi.Tests
             try
             {
                 Address address = new Address(Guid.NewGuid(), "AAA", string.Empty, "A", "A");
-                address.IsAddressValid();
                 Assert.Fail();
             }
             catch (Exception)
@@ -63,7 +60,6 @@ namespace CustomerWebApi.Tests
             try
             {
                 Address address = new Address(Guid.NewGuid(), "AAA", "A", string.Empty, "A");
-                address.IsAddressValid();
                 Assert.Fail();
             }
             catch (Exception)
@@ -78,7 +74,6 @@ namespace CustomerWebApi.Tests
             try
             {
                 Address address = new Address(Guid.NewGuid(), "A", "A", "A", string.Empty);
-                address.IsAddressValid();
                 Assert.Fail();
             }
             catch (Exception)
@@ -95,7 +90,6 @@ namespace CustomerWebApi.Tests
             try
             {
                 Address address = new Address(Guid.NewGuid(), "SADASDLKJASDLKASDJKLASDJADLSKJASDKLASDJKLASDJALSDKJADSLKJADSLKADSJKLASDJADSLKJADSKLADJSKLASDJ", "A", "A", "A");
-                address.IsAddressValid();
                 Assert.Fail();
             }
             catch (Exception)
@@ -110,7 +104,6 @@ namespace CustomerWebApi.Tests
             try
             {
                 Address address = new Address(Guid.NewGuid(), "A", "SADOIJADSOIJASDKLASDJKLASDKJLASDJKLJKASDLJKLASDJKLASDJKLASDDASDKLASJASDKLDASJKLASDJAKLSDJ", "A", "A");
-                address.IsAddressValid();
                 Assert.Fail();
             }
             catch (Exception)
@@ -125,7 +118,6 @@ namespace CustomerWebApi.Tests
             try
             {
                 Address address = new Address(Guid.NewGuid(), "A", "A", "SADOIJADSOIJASDKLASDJKLASDKJLASDJKLJKASDLJKLASDJKLASDJKLASDDASDKLASJASDKLDASJKLASDJAKLSDJ", "A");
-                address.IsAddressValid();
                 Assert.Fail();
             }
             catch (Exception)
@@ -140,7 +132,6 @@ namespace CustomerWebApi.Tests
             try
             {
                 Address address = new Address(Guid.NewGuid(), "A", "A", "A", "SADOIJADSOIJASDKLASDJKLASDKJLASDJKLJKASDLJKLASDJKLASDJKLASDDASDKLASJASDKLDASJKLASDJAKLSDJ");
-                address.IsAddressValid();
                 Assert.Fail();
             }
             catch (Exception)

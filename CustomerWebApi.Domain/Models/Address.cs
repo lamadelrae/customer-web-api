@@ -11,7 +11,7 @@ namespace CustomerWebApi.Domain.Models
     public class Address : Entity
     {
         [Required]
-        public Guid CustomerId { get; set; }
+        public Guid CustomerId { get; private set; }
 
         [Required]
         public Customer Customer { get; private set; }
@@ -46,6 +46,7 @@ namespace CustomerWebApi.Domain.Models
             District = district;
             City = city;
             State = state;
+            this.IsValid();
         }
 
         public Address(Guid id,
@@ -62,16 +63,12 @@ namespace CustomerWebApi.Domain.Models
             District = district;
             City = city;
             State = state;
+            this.IsValid();
         }
 
         public void SetCustomer(Customer customer)
         {
             Customer = customer;
-        }
-
-        public void IsAddressValid()
-        {
-            this.IsValid();
         }
     }
 }

@@ -12,7 +12,6 @@ namespace CustomerWebApi.Test
             try
             {
                 Customer customer = new Customer(string.Empty, "34024118579", DateTime.Now);
-                customer.IsCustomerValid();
                 Assert.Fail();
             }
             catch (Exception)
@@ -27,7 +26,6 @@ namespace CustomerWebApi.Test
             try
             {
                 Customer customer = new Customer("Matthew", string.Empty, DateTime.Now);
-                customer.IsCustomerValid();
                 Assert.Fail();
             }
             catch (Exception)
@@ -42,7 +40,6 @@ namespace CustomerWebApi.Test
             try
             {
                 Customer customer = new Customer("Matthew", "123456789", DateTime.Now);
-                customer.IsCustomerValid();
                 Assert.Fail();
             }
             catch (Exception)
@@ -57,7 +54,6 @@ namespace CustomerWebApi.Test
             try
             {
                 Customer customer = new Customer("3290832903829038290328902382390", "120982190128129081209128", DateTime.Now);
-                customer.IsCustomerValid();
                 Assert.Fail();
             }
             catch (Exception)

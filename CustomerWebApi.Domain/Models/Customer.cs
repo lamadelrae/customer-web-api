@@ -39,6 +39,7 @@ namespace CustomerWebApi.Domain.Models
             Name = name;
             Cpf = cpf;
             BirthDate = birthDate;
+            IsCustomerValid();
         }
 
         public Customer(Guid id, 
@@ -50,6 +51,7 @@ namespace CustomerWebApi.Domain.Models
             Name = name;
             Cpf = cpf;
             BirthDate = birthDate;
+            IsCustomerValid();
         }
 
         public void IsCustomerValid()
